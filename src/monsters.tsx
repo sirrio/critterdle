@@ -1,9 +1,9 @@
 import type { IconType } from "react-icons";
 import {
-  GiAlienBug, GiAngelOutfit, GiArmadilloTail, GiArmorVest, GiBatWing,
+  GiAlienBug, GiAngelOutfit, GiArmadilloTail, GiArmorVest, GiBatWing, GiBearHead,
   GiBodySwapping, GiBull, GiCentaur, GiChicken, GiClaw, GiCloak,
   GiCrabClaw, GiCrocJaws, GiCrownedSkull, GiDaemonSkull, GiDevilMask,
-  GiDirewolf, GiDjinn, GiDoubleDragon, GiDragonOrb, GiEgyptianSphinx,
+  GiDirewolf, GiDjinn, GiDoubleDragon, GiDragonOrb, GiDwarfFace, GiEgyptianSphinx,
   GiFireAxe, GiFireSilhouette, GiFlame, GiFrankensteinCreature, GiGargoyle, GiGhost, GiGiant,
   GiGecko, GiGoblinCamp, GiGoblinHead, GiGolemHead, GiGriffinSymbol, GiHarpy,
   GiHornedSkull, GiHound, GiHydra, GiHyenaHead, GiIfrit, GiImp, GiJumpingDog,
@@ -17,9 +17,23 @@ import {
 import monsterData from "./monsters.generated.json";
 
 const EttinIcon: IconType = () => (
-  <span className="ettin-icon" aria-hidden="true">
+  <span className="dual-creature-icon ettin-icon" aria-hidden="true">
     <GiOgre />
     <GiOgre />
+  </span>
+);
+
+const OwlbearIcon: IconType = () => (
+  <span className="dual-creature-icon owlbear-icon" aria-hidden="true">
+    <GiOwl />
+    <GiBearHead />
+  </span>
+);
+
+const AzerIcon: IconType = () => (
+  <span className="azer-icon" aria-hidden="true">
+    <GiFlame />
+    <GiDwarfFace />
   </span>
 );
 
@@ -43,7 +57,7 @@ const ICONS: Record<string, IconType> = {
   "Ankheg": GiAlienBug,
   "Ankylosaurus": GiArmadilloTail,
   "Archelon": GiTurtle,
-  "Azer Sentinel": GiFlame,
+  "Azer Sentinel": AzerIcon,
   "Balor": GiDaemonSkull,
   "Barbed Devil": GiSpikedDragonHead,
   "Basilisk": GiGecko,
@@ -102,7 +116,7 @@ const ICONS: Record<string, IconType> = {
   "Mimic": GiMimicChest,
   "Minotaur of Baphomet": GiMinotaur,
   "Mummy": GiMummyHead,
-  "Owlbear": GiOwl,
+  "Owlbear": OwlbearIcon,
   "Pegasus": GiPegasus,
   "Purple Worm": GiWormMouth,
   "Sphinx of Wonder": GiEgyptianSphinx,

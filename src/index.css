@@ -10,19 +10,39 @@
   --accent-shadow: rgba(255, 87, 87, .2);
 }
 
-.ettin-icon {
+.dual-creature-icon,
+.azer-icon {
   position: relative;
   display: block;
   width: 88%;
   height: 88%;
 }
 
-.ettin-icon svg {
+.dual-creature-icon svg {
   position: absolute;
-  top: 9%;
-  width: 66% !important;
-  height: 82% !important;
+  top: 8%;
+  width: 48% !important;
+  height: 84% !important;
 }
 
-.ettin-icon svg:first-child { left: 0; }
-.ettin-icon svg:last-child { right: 0; transform: scaleX(-1); }
+.dual-creature-icon svg:first-child { left: 1%; }
+.dual-creature-icon svg:last-child { right: 1%; }
+.ettin-icon svg:last-child { transform: scaleX(-1); }
+
+.azer-icon svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.azer-icon svg:first-child {
+  top: 0;
+  width: 38% !important;
+  height: 36% !important;
+}
+
+.azer-icon svg:last-child {
+  bottom: 0;
+  width: 72% !important;
+  height: 66% !important;
+}
