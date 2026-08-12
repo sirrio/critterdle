@@ -11,7 +11,8 @@
 }
 
 .dual-creature-icon,
-.azer-icon {
+.azer-icon,
+.owlbear-icon {
   position: relative;
   display: block;
   width: 88%;
@@ -28,6 +29,25 @@
 .dual-creature-icon svg:first-child { left: 1%; }
 .dual-creature-icon svg:last-child { right: 1%; }
 .ettin-icon svg:last-child { transform: scaleX(-1); }
+
+.owlbear-icon svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.owlbear-icon .owlbear-head {
+  top: 3%;
+  width: 88% !important;
+  height: 94% !important;
+}
+
+.owlbear-icon .owlbear-eyes {
+  top: 27%;
+  width: 42% !important;
+  height: 30% !important;
+  color: #fff;
+}
 
 .azer-icon svg {
   position: absolute;

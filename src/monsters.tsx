@@ -3,13 +3,13 @@ import {
   GiAlienBug, GiAngelOutfit, GiArmadilloTail, GiArmorVest, GiBatWing, GiBearHead,
   GiBodySwapping, GiBull, GiCentaur, GiChicken, GiClaw, GiCloak,
   GiCrabClaw, GiCrocJaws, GiCrownedSkull, GiDaemonSkull, GiDevilMask,
-  GiDirewolf, GiDjinn, GiDoubleDragon, GiDragonOrb, GiDwarfFace, GiEgyptianSphinx,
+  GiDirewolf, GiDjinn, GiDoubleDragon, GiDragonOrb, GiDwarfFace, GiEgyptianSphinx, GiEvilEyes,
   GiFireAxe, GiFireSilhouette, GiFlame, GiFrankensteinCreature, GiGargoyle, GiGhost, GiGiant,
   GiGecko, GiGoblinCamp, GiGoblinHead, GiGolemHead, GiGriffinSymbol, GiHarpy,
   GiHornedSkull, GiHound, GiHydra, GiHyenaHead, GiIfrit, GiImp, GiJumpingDog,
   GiIceCube, GiKrakenTentacle, GiMedusaHead,
   GiMimicChest, GiMinotaur, GiMouthWatering, GiMummyHead,
-  GiOakLeaf, GiOgre, GiOwl, GiPegasus, GiRobotGolem, GiRockGolem, GiScorpion, GiSeaDragon, GiSeaSerpent, GiSharkJaws,
+  GiOakLeaf, GiOgre, GiPegasus, GiRobotGolem, GiRockGolem, GiScorpion, GiSeaDragon, GiSeaSerpent, GiSharkJaws,
   GiShamblingZombie, GiSlime, GiSpiderAlt, GiSpiderFace, GiSpiderWeb,
   GiSpikedDragonHead, GiSpikedTail, GiTentaclesBarrier, GiTornado, GiTRexSkull, GiTurtle,
   GiWitchFace, GiWormMouth,
@@ -24,9 +24,9 @@ const EttinIcon: IconType = () => (
 );
 
 const OwlbearIcon: IconType = () => (
-  <span className="dual-creature-icon owlbear-icon" aria-hidden="true">
-    <GiOwl />
-    <GiBearHead />
+  <span className="owlbear-icon" aria-hidden="true">
+    <GiBearHead className="owlbear-head" />
+    <GiEvilEyes className="owlbear-eyes" />
   </span>
 );
 
