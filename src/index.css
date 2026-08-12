@@ -1,0 +1,10 @@
+@import "@sirrio/dndle-core/styles.css";
+
+.critterdle-theme {
+  --red: #ff5757;
+  --red-dark: #ad2020;
+  --accent-hover: #e33f3f;
+  --accent-soft: #fff0f0;
+  --accent-border: #ffc0c0;
+  --accent-shadow: rgba(255, 87, 87, .2);
+}

@@ -1,0 +1,722 @@
+[
+  {
+    "name": "Aboleth",
+    "size": "Large",
+    "type": "Aberration",
+    "alignment": "Lawful Evil",
+    "armorClass": 17,
+    "hitPoints": 150,
+    "topSpeed": 40,
+    "challengeRating": 10
+  },
+  {
+    "name": "Air Elemental",
+    "size": "Large",
+    "type": "Elemental",
+    "alignment": "Neutral",
+    "armorClass": 15,
+    "hitPoints": 90,
+    "topSpeed": 90,
+    "challengeRating": 5
+  },
+  {
+    "name": "Allosaurus",
+    "size": "Large",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "armorClass": 13,
+    "hitPoints": 51,
+    "topSpeed": 60,
+    "challengeRating": 2
+  },
+  {
+    "name": "Animated Armor",
+    "size": "Medium",
+    "type": "Construct",
+    "alignment": "Unaligned",
+    "armorClass": 18,
+    "hitPoints": 33,
+    "topSpeed": 25,
+    "challengeRating": 1
+  },
+  {
+    "name": "Ankheg",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 14,
+    "hitPoints": 45,
+    "topSpeed": 30,
+    "challengeRating": 2
+  },
+  {
+    "name": "Ankylosaurus",
+    "size": "Huge",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "armorClass": 15,
+    "hitPoints": 68,
+    "topSpeed": 30,
+    "challengeRating": 3
+  },
+  {
+    "name": "Archelon",
+    "size": "Huge",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "armorClass": 17,
+    "hitPoints": 90,
+    "topSpeed": 80,
+    "challengeRating": 4
+  },
+  {
+    "name": "Azer Sentinel",
+    "size": "Medium",
+    "type": "Elemental",
+    "alignment": "Lawful Neutral",
+    "armorClass": 17,
+    "hitPoints": 39,
+    "topSpeed": 30,
+    "challengeRating": 2
+  },
+  {
+    "name": "Balor",
+    "size": "Huge",
+    "type": "Fiend",
+    "alignment": "Chaotic Evil",
+    "armorClass": 19,
+    "hitPoints": 287,
+    "topSpeed": 80,
+    "challengeRating": 19
+  },
+  {
+    "name": "Barbed Devil",
+    "size": "Medium",
+    "type": "Fiend",
+    "alignment": "Lawful Evil",
+    "armorClass": 15,
+    "hitPoints": 110,
+    "topSpeed": 30,
+    "challengeRating": 5
+  },
+  {
+    "name": "Basilisk",
+    "size": "Medium",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 15,
+    "hitPoints": 52,
+    "topSpeed": 20,
+    "challengeRating": 3
+  },
+  {
+    "name": "Bearded Devil",
+    "size": "Medium",
+    "type": "Fiend",
+    "alignment": "Lawful Evil",
+    "armorClass": 13,
+    "hitPoints": 58,
+    "topSpeed": 30,
+    "challengeRating": 3
+  },
+  {
+    "name": "Behir",
+    "size": "Huge",
+    "type": "Monstrosity",
+    "alignment": "Neutral Evil",
+    "armorClass": 17,
+    "hitPoints": 168,
+    "topSpeed": 50,
+    "challengeRating": 11
+  },
+  {
+    "name": "Black Pudding",
+    "size": "Large",
+    "type": "Ooze",
+    "alignment": "Unaligned",
+    "armorClass": 7,
+    "hitPoints": 68,
+    "topSpeed": 20,
+    "challengeRating": 4
+  },
+  {
+    "name": "Blink Dog",
+    "size": "Medium",
+    "type": "Fey",
+    "alignment": "Lawful Good",
+    "armorClass": 13,
+    "hitPoints": 22,
+    "topSpeed": 40,
+    "challengeRating": 0.25
+  },
+  {
+    "name": "Bone Devil",
+    "size": "Large",
+    "type": "Fiend",
+    "alignment": "Lawful Evil",
+    "armorClass": 16,
+    "hitPoints": 161,
+    "topSpeed": 40,
+    "challengeRating": 9
+  },
+  {
+    "name": "Bugbear Stalker",
+    "size": "Medium",
+    "type": "Fey",
+    "alignment": "Chaotic Evil",
+    "armorClass": 15,
+    "hitPoints": 65,
+    "topSpeed": 30,
+    "challengeRating": 3
+  },
+  {
+    "name": "Bulette",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 17,
+    "hitPoints": 94,
+    "topSpeed": 40,
+    "challengeRating": 5
+  },
+  {
+    "name": "Centaur Trooper",
+    "size": "Large",
+    "type": "Fey",
+    "alignment": "Neutral Good",
+    "armorClass": 16,
+    "hitPoints": 45,
+    "topSpeed": 50,
+    "challengeRating": 2
+  },
+  {
+    "name": "Chimera",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Chaotic Evil",
+    "armorClass": 14,
+    "hitPoints": 114,
+    "topSpeed": 60,
+    "challengeRating": 6
+  },
+  {
+    "name": "Chuul",
+    "size": "Large",
+    "type": "Aberration",
+    "alignment": "Chaotic Evil",
+    "armorClass": 16,
+    "hitPoints": 76,
+    "topSpeed": 30,
+    "challengeRating": 4
+  },
+  {
+    "name": "Clay Golem",
+    "size": "Large",
+    "type": "Construct",
+    "alignment": "Unaligned",
+    "armorClass": 14,
+    "hitPoints": 123,
+    "topSpeed": 30,
+    "challengeRating": 9
+  },
+  {
+    "name": "Cloaker",
+    "size": "Large",
+    "type": "Aberration",
+    "alignment": "Chaotic Neutral",
+    "armorClass": 14,
+    "hitPoints": 91,
+    "topSpeed": 40,
+    "challengeRating": 8
+  },
+  {
+    "name": "Cloud Giant",
+    "size": "Huge",
+    "type": "Giant",
+    "alignment": "Neutral",
+    "armorClass": 14,
+    "hitPoints": 200,
+    "topSpeed": 40,
+    "challengeRating": 9
+  },
+  {
+    "name": "Cockatrice",
+    "size": "Small",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 11,
+    "hitPoints": 22,
+    "topSpeed": 40,
+    "challengeRating": 0.5
+  },
+  {
+    "name": "Couatl",
+    "size": "Medium",
+    "type": "Celestial",
+    "alignment": "Lawful Good",
+    "armorClass": 19,
+    "hitPoints": 60,
+    "topSpeed": 90,
+    "challengeRating": 4
+  },
+  {
+    "name": "Darkmantle",
+    "size": "Small",
+    "type": "Aberration",
+    "alignment": "Unaligned",
+    "armorClass": 11,
+    "hitPoints": 22,
+    "topSpeed": 30,
+    "challengeRating": 0.5
+  },
+  {
+    "name": "Deva",
+    "size": "Medium",
+    "type": "Celestial",
+    "alignment": "Lawful Good",
+    "armorClass": 17,
+    "hitPoints": 229,
+    "topSpeed": 90,
+    "challengeRating": 10
+  },
+  {
+    "name": "Dire Wolf",
+    "size": "Large",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "armorClass": 14,
+    "hitPoints": 22,
+    "topSpeed": 50,
+    "challengeRating": 1
+  },
+  {
+    "name": "Djinni",
+    "size": "Large",
+    "type": "Elemental",
+    "alignment": "Neutral",
+    "armorClass": 17,
+    "hitPoints": 218,
+    "topSpeed": 90,
+    "challengeRating": 11
+  },
+  {
+    "name": "Doppelganger",
+    "size": "Medium",
+    "type": "Monstrosity",
+    "alignment": "Neutral",
+    "armorClass": 14,
+    "hitPoints": 52,
+    "topSpeed": 30,
+    "challengeRating": 3
+  },
+  {
+    "name": "Dragon Turtle",
+    "size": "Gargantuan",
+    "type": "Dragon",
+    "alignment": "Neutral",
+    "armorClass": 20,
+    "hitPoints": 356,
+    "topSpeed": 50,
+    "challengeRating": 17
+  },
+  {
+    "name": "Drider",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Chaotic Evil",
+    "armorClass": 19,
+    "hitPoints": 123,
+    "topSpeed": 30,
+    "challengeRating": 6
+  },
+  {
+    "name": "Dryad",
+    "size": "Medium",
+    "type": "Fey",
+    "alignment": "Neutral",
+    "armorClass": 16,
+    "hitPoints": 22,
+    "topSpeed": 30,
+    "challengeRating": 1
+  },
+  {
+    "name": "Earth Elemental",
+    "size": "Large",
+    "type": "Elemental",
+    "alignment": "Neutral",
+    "armorClass": 17,
+    "hitPoints": 147,
+    "topSpeed": 30,
+    "challengeRating": 5
+  },
+  {
+    "name": "Efreeti",
+    "size": "Large",
+    "type": "Elemental",
+    "alignment": "Neutral",
+    "armorClass": 17,
+    "hitPoints": 212,
+    "topSpeed": 60,
+    "challengeRating": 11
+  },
+  {
+    "name": "Ettercap",
+    "size": "Medium",
+    "type": "Monstrosity",
+    "alignment": "Neutral Evil",
+    "armorClass": 13,
+    "hitPoints": 44,
+    "topSpeed": 30,
+    "challengeRating": 2
+  },
+  {
+    "name": "Ettin",
+    "size": "Large",
+    "type": "Giant",
+    "alignment": "Chaotic Evil",
+    "armorClass": 12,
+    "hitPoints": 85,
+    "topSpeed": 40,
+    "challengeRating": 4
+  },
+  {
+    "name": "Fire Elemental",
+    "size": "Large",
+    "type": "Elemental",
+    "alignment": "Neutral",
+    "armorClass": 13,
+    "hitPoints": 93,
+    "topSpeed": 50,
+    "challengeRating": 5
+  },
+  {
+    "name": "Fire Giant",
+    "size": "Huge",
+    "type": "Giant",
+    "alignment": "Lawful Evil",
+    "armorClass": 18,
+    "hitPoints": 162,
+    "topSpeed": 30,
+    "challengeRating": 9
+  },
+  {
+    "name": "Flesh Golem",
+    "size": "Medium",
+    "type": "Construct",
+    "alignment": "Neutral",
+    "armorClass": 9,
+    "hitPoints": 127,
+    "topSpeed": 30,
+    "challengeRating": 5
+  },
+  {
+    "name": "Gargoyle",
+    "size": "Medium",
+    "type": "Elemental",
+    "alignment": "Chaotic Evil",
+    "armorClass": 15,
+    "hitPoints": 67,
+    "topSpeed": 60,
+    "challengeRating": 2
+  },
+  {
+    "name": "Gelatinous Cube",
+    "size": "Large",
+    "type": "Ooze",
+    "alignment": "Unaligned",
+    "armorClass": 6,
+    "hitPoints": 63,
+    "topSpeed": 15,
+    "challengeRating": 2
+  },
+  {
+    "name": "Ghost",
+    "size": "Medium",
+    "type": "Undead",
+    "alignment": "Neutral",
+    "armorClass": 11,
+    "hitPoints": 45,
+    "topSpeed": 40,
+    "challengeRating": 4
+  },
+  {
+    "name": "Ghoul",
+    "size": "Medium",
+    "type": "Undead",
+    "alignment": "Chaotic Evil",
+    "armorClass": 12,
+    "hitPoints": 22,
+    "topSpeed": 30,
+    "challengeRating": 1
+  },
+  {
+    "name": "Giant Scorpion",
+    "size": "Large",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "armorClass": 15,
+    "hitPoints": 52,
+    "topSpeed": 40,
+    "challengeRating": 3
+  },
+  {
+    "name": "Giant Spider",
+    "size": "Large",
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "armorClass": 14,
+    "hitPoints": 26,
+    "topSpeed": 30,
+    "challengeRating": 1
+  },
+  {
+    "name": "Gibbering Mouther",
+    "size": "Medium",
+    "type": "Aberration",
+    "alignment": "Chaotic Neutral",
+    "armorClass": 9,
+    "hitPoints": 52,
+    "topSpeed": 20,
+    "challengeRating": 2
+  },
+  {
+    "name": "Gnoll Warrior",
+    "size": "Medium",
+    "type": "Fiend",
+    "alignment": "Chaotic Evil",
+    "armorClass": 15,
+    "hitPoints": 27,
+    "topSpeed": 30,
+    "challengeRating": 0.5
+  },
+  {
+    "name": "Goblin Boss",
+    "size": "Small",
+    "type": "Fey",
+    "alignment": "Chaotic Neutral",
+    "armorClass": 17,
+    "hitPoints": 21,
+    "topSpeed": 30,
+    "challengeRating": 1
+  },
+  {
+    "name": "Gorgon",
+    "size": "Large",
+    "type": "Construct",
+    "alignment": "Unaligned",
+    "armorClass": 19,
+    "hitPoints": 114,
+    "topSpeed": 40,
+    "challengeRating": 5
+  },
+  {
+    "name": "Green Hag",
+    "size": "Medium",
+    "type": "Fey",
+    "alignment": "Neutral Evil",
+    "armorClass": 17,
+    "hitPoints": 82,
+    "topSpeed": 30,
+    "challengeRating": 3
+  },
+  {
+    "name": "Griffon",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 12,
+    "hitPoints": 59,
+    "topSpeed": 80,
+    "challengeRating": 2
+  },
+  {
+    "name": "Harpy",
+    "size": "Medium",
+    "type": "Monstrosity",
+    "alignment": "Chaotic Evil",
+    "armorClass": 11,
+    "hitPoints": 38,
+    "topSpeed": 40,
+    "challengeRating": 1
+  },
+  {
+    "name": "Hell Hound",
+    "size": "Medium",
+    "type": "Fiend",
+    "alignment": "Lawful Evil",
+    "armorClass": 15,
+    "hitPoints": 58,
+    "topSpeed": 50,
+    "challengeRating": 3
+  },
+  {
+    "name": "Hill Giant",
+    "size": "Huge",
+    "type": "Giant",
+    "alignment": "Chaotic Evil",
+    "armorClass": 13,
+    "hitPoints": 105,
+    "topSpeed": 40,
+    "challengeRating": 5
+  },
+  {
+    "name": "Hydra",
+    "size": "Huge",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 15,
+    "hitPoints": 184,
+    "topSpeed": 40,
+    "challengeRating": 8
+  },
+  {
+    "name": "Imp",
+    "size": "Tiny",
+    "type": "Fiend",
+    "alignment": "Lawful Evil",
+    "armorClass": 13,
+    "hitPoints": 21,
+    "topSpeed": 40,
+    "challengeRating": 1
+  },
+  {
+    "name": "Iron Golem",
+    "size": "Large",
+    "type": "Construct",
+    "alignment": "Unaligned",
+    "armorClass": 20,
+    "hitPoints": 252,
+    "topSpeed": 30,
+    "challengeRating": 16
+  },
+  {
+    "name": "Kraken",
+    "size": "Gargantuan",
+    "type": "Monstrosity",
+    "alignment": "Chaotic Evil",
+    "armorClass": 18,
+    "hitPoints": 481,
+    "topSpeed": 120,
+    "challengeRating": 23
+  },
+  {
+    "name": "Lich",
+    "size": "Medium",
+    "type": "Undead",
+    "alignment": "Neutral Evil",
+    "armorClass": 20,
+    "hitPoints": 315,
+    "topSpeed": 30,
+    "challengeRating": 21
+  },
+  {
+    "name": "Manticore",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Lawful Evil",
+    "armorClass": 14,
+    "hitPoints": 68,
+    "topSpeed": 50,
+    "challengeRating": 3
+  },
+  {
+    "name": "Medusa",
+    "size": "Medium",
+    "type": "Monstrosity",
+    "alignment": "Lawful Evil",
+    "armorClass": 15,
+    "hitPoints": 127,
+    "topSpeed": 30,
+    "challengeRating": 6
+  },
+  {
+    "name": "Mimic",
+    "size": "Medium",
+    "type": "Monstrosity",
+    "alignment": "Neutral",
+    "armorClass": 12,
+    "hitPoints": 58,
+    "topSpeed": 20,
+    "challengeRating": 2
+  },
+  {
+    "name": "Minotaur of Baphomet",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Chaotic Evil",
+    "armorClass": 14,
+    "hitPoints": 85,
+    "topSpeed": 40,
+    "challengeRating": 3
+  },
+  {
+    "name": "Mummy",
+    "size": "Medium",
+    "type": "Or Small Undead",
+    "alignment": "Lawful Evil",
+    "armorClass": 11,
+    "hitPoints": 58,
+    "topSpeed": 20,
+    "challengeRating": 3
+  },
+  {
+    "name": "Owlbear",
+    "size": "Large",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 13,
+    "hitPoints": 59,
+    "topSpeed": 40,
+    "challengeRating": 3
+  },
+  {
+    "name": "Pegasus",
+    "size": "Large",
+    "type": "Celestial",
+    "alignment": "Chaotic Good",
+    "armorClass": 12,
+    "hitPoints": 59,
+    "topSpeed": 90,
+    "challengeRating": 2
+  },
+  {
+    "name": "Purple Worm",
+    "size": "Gargantuan",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 18,
+    "hitPoints": 247,
+    "topSpeed": 50,
+    "challengeRating": 15
+  },
+  {
+    "name": "Sphinx of Wonder",
+    "size": "Tiny",
+    "type": "Celestial",
+    "alignment": "Lawful Good",
+    "armorClass": 13,
+    "hitPoints": 24,
+    "topSpeed": 40,
+    "challengeRating": 1
+  },
+  {
+    "name": "Swarm of Crawling Claws",
+    "size": "Medium",
+    "type": "Swarm Of Tiny Undead",
+    "alignment": "Neutral Evil",
+    "armorClass": 12,
+    "hitPoints": 49,
+    "topSpeed": 30,
+    "challengeRating": 3
+  },
+  {
+    "name": "Tarrasque",
+    "size": "Gargantuan",
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "armorClass": 25,
+    "hitPoints": 697,
+    "topSpeed": 60,
+    "challengeRating": 30
+  }
+]
