@@ -9,3 +9,20 @@
   --accent-border: #ffc0c0;
   --accent-shadow: rgba(255, 87, 87, .2);
 }
+
+.ettin-icon {
+  position: relative;
+  display: block;
+  width: 88%;
+  height: 88%;
+}
+
+.ettin-icon svg {
+  position: absolute;
+  top: 9%;
+  width: 66% !important;
+  height: 82% !important;
+}
+
+.ettin-icon svg:first-child { left: 0; }
+.ettin-icon svg:last-child { right: 0; transform: scaleX(-1); }

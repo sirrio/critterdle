@@ -1,20 +1,27 @@
 import type { IconType } from "react-icons";
 import {
-  GiAngelOutfit, GiAnt, GiArmadilloTail, GiArmorVest, GiBatWing,
+  GiAlienBug, GiAngelOutfit, GiArmadilloTail, GiArmorVest, GiBatWing,
   GiBodySwapping, GiBull, GiCentaur, GiChicken, GiClaw, GiCloak,
-  GiCrabClaw, GiCrownedSkull, GiCube, GiDaemonSkull, GiDevilMask, GiDinosaurRex,
-  GiDirewolf, GiDjinn, GiDoubleDragon, GiDoubleFaceMask, GiDragonOrb, GiEgyptianSphinx,
+  GiCrabClaw, GiCrocJaws, GiCrownedSkull, GiDaemonSkull, GiDevilMask,
+  GiDirewolf, GiDjinn, GiDoubleDragon, GiDragonOrb, GiEgyptianSphinx,
   GiFireAxe, GiFireSilhouette, GiFlame, GiFrankensteinCreature, GiGargoyle, GiGhost, GiGiant,
-  GiGoblinCamp, GiGoblinHead, GiGolemHead, GiGriffinSymbol, GiHarpy,
+  GiGecko, GiGoblinCamp, GiGoblinHead, GiGolemHead, GiGriffinSymbol, GiHarpy,
   GiHornedSkull, GiHound, GiHydra, GiHyenaHead, GiIfrit, GiImp, GiJumpingDog,
-  GiKrakenTentacle, GiLightningStorm, GiLizardTongue, GiMedusaHead,
+  GiIceCube, GiKrakenTentacle, GiMedusaHead,
   GiMimicChest, GiMinotaur, GiMouthWatering, GiMummyHead,
-  GiOakLeaf, GiOgre, GiOwl, GiPegasus, GiRobotGolem, GiScorpion, GiSeaSerpent, GiSharkJaws,
-  GiShamblingZombie, GiSlime, GiSpiderAlt, GiSpiderFace, GiSpiderWeb, GiStonePile,
+  GiOakLeaf, GiOgre, GiOwl, GiPegasus, GiRobotGolem, GiRockGolem, GiScorpion, GiSeaDragon, GiSeaSerpent, GiSharkJaws,
+  GiShamblingZombie, GiSlime, GiSpiderAlt, GiSpiderFace, GiSpiderWeb,
   GiSpikedDragonHead, GiSpikedTail, GiTentaclesBarrier, GiTornado, GiTRexSkull, GiTurtle,
   GiWitchFace, GiWormMouth,
 } from "react-icons/gi";
 import monsterData from "./monsters.generated.json";
+
+const EttinIcon: IconType = () => (
+  <span className="ettin-icon" aria-hidden="true">
+    <GiOgre />
+    <GiOgre />
+  </span>
+);
 
 export type Monster = {
   name: string;
@@ -33,15 +40,15 @@ const ICONS: Record<string, IconType> = {
   "Air Elemental": GiTornado,
   "Allosaurus": GiTRexSkull,
   "Animated Armor": GiArmorVest,
-  "Ankheg": GiAnt,
+  "Ankheg": GiAlienBug,
   "Ankylosaurus": GiArmadilloTail,
   "Archelon": GiTurtle,
   "Azer Sentinel": GiFlame,
   "Balor": GiDaemonSkull,
   "Barbed Devil": GiSpikedDragonHead,
-  "Basilisk": GiLizardTongue,
+  "Basilisk": GiGecko,
   "Bearded Devil": GiDevilMask,
-  "Behir": GiLightningStorm,
+  "Behir": GiSeaDragon,
   "Black Pudding": GiSlime,
   "Blink Dog": GiJumpingDog,
   "Bone Devil": GiHornedSkull,
@@ -63,15 +70,15 @@ const ICONS: Record<string, IconType> = {
   "Dragon Turtle": GiDragonOrb,
   "Drider": GiSpiderAlt,
   "Dryad": GiOakLeaf,
-  "Earth Elemental": GiStonePile,
+  "Earth Elemental": GiRockGolem,
   "Efreeti": GiIfrit,
   "Ettercap": GiSpiderFace,
-  "Ettin": GiDoubleFaceMask,
+  "Ettin": EttinIcon,
   "Fire Elemental": GiFireSilhouette,
   "Fire Giant": GiFireAxe,
   "Flesh Golem": GiFrankensteinCreature,
   "Gargoyle": GiGargoyle,
-  "Gelatinous Cube": GiCube,
+  "Gelatinous Cube": GiIceCube,
   "Ghost": GiGhost,
   "Ghoul": GiShamblingZombie,
   "Giant Scorpion": GiScorpion,
@@ -100,7 +107,7 @@ const ICONS: Record<string, IconType> = {
   "Purple Worm": GiWormMouth,
   "Sphinx of Wonder": GiEgyptianSphinx,
   "Swarm of Crawling Claws": GiClaw,
-  "Tarrasque": GiDinosaurRex,
+  "Tarrasque": GiCrocJaws,
 };
 
 export const MONSTERS: Monster[] = monsterData.map((monster) => ({
