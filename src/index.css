@@ -1,6 +1,7 @@
 @import "@sirrio/dndle-core/styles.css";
 
 .critterdle-theme {
+  --header-bg: #251517;
   --red: #ff5757;
   --red-dark: #ad2020;
   --accent-hover: #e33f3f;
