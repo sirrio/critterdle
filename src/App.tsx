@@ -28,7 +28,7 @@ export const CRITTERDLE_CONFIG: DndleConfig<Monster> = {
   id: "critterdle",
   storageKey: "critterdle",
   brand: "CRITTERDLE",
-  brandIconUrl: "brand.svg",
+  brandIconUrl: "brand-header.svg",
   tagline: "THE DAILY MONSTER HUNT",
   entries: MONSTERS,
   traits: [
