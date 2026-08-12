@@ -58,8 +58,7 @@ export const CRITTERDLE_CONFIG: DndleConfig<Monster> = {
   shareUrl: "https://sirrio.github.io/critterdle/?share=1",
   shareAction: "Join the hunt!",
   relatedGame: {
-    prompt: "Rather search the Arcane Archive for spells?",
-    label: "Play SPELLDLE",
+    prompt: "Or search the Arcane Archive for spells?",
     url: "https://sirrio.github.io/spelldle/",
   },
   resultSummary: (monster) => `CR ${crLabel(monster.challengeRating)} · ${monster.size} ${monster.type} · AC ${monster.armorClass} · ${monster.hitPoints} HP`,
