@@ -2,7 +2,7 @@ import type { IconType } from "react-icons";
 import {
   GiAngelOutfit, GiAnt, GiArmadillo, GiArmorVest, GiBatWing, GiBeard,
   GiBodySwapping, GiBroadsword, GiBull, GiCentaur, GiChicken, GiClaw, GiCloak,
-  GiCrabClaw, GiCube, GiDaemonSkull, GiDeadHead, GiDevilMask, GiDinosaurRex,
+  GiCrabClaw, GiCrownedSkull, GiCube, GiDaemonSkull, GiDevilMask, GiDinosaurRex,
   GiDirewolf, GiDjinn, GiDogHouse, GiDoubleFaceMask, GiDragonOrb, GiEgyptianSphinx,
   GiFireSilhouette, GiFlame, GiFrankensteinCreature, GiGargoyle, GiGhost, GiGiant,
   GiGoblinCamp, GiGoblinHead, GiGolemHead, GiGriffinSymbol, GiHarpy,
@@ -89,7 +89,7 @@ const ICONS: Record<string, IconType> = {
   "Imp": GiImp,
   "Iron Golem": GiRobotGolem,
   "Kraken": GiKrakenTentacle,
-  "Lich": GiDeadHead,
+  "Lich": GiCrownedSkull,
   "Manticore": GiLion,
   "Medusa": GiMedusaHead,
   "Mimic": GiMimicChest,
