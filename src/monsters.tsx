@@ -1,10 +1,10 @@
 import type { IconType } from "react-icons";
 import {
-  GiAlienBug, GiAngelOutfit, GiArmadilloTail, GiArmorVest, GiBatWing, GiBearHead,
+  GiAlienBug, GiAngelOutfit, GiArmadilloTail, GiArmorVest, GiBatWing, GiBearFace,
   GiBodySwapping, GiBull, GiCentaur, GiChicken, GiClaw, GiCloak,
   GiCrabClaw, GiCrocJaws, GiCrownedSkull, GiDaemonSkull, GiDevilMask,
-  GiDirewolf, GiDjinn, GiDoubleDragon, GiDragonOrb, GiDwarfFace, GiEgyptianSphinx, GiEvilEyes,
-  GiFireAxe, GiFireSilhouette, GiFlame, GiFrankensteinCreature, GiGargoyle, GiGhost, GiGiant,
+  GiDirewolf, GiDjinn, GiDoubleDragon, GiDragonOrb, GiDuality, GiDwarfFace, GiEgyptianSphinx,
+  GiFireAxe, GiFireSilhouette, GiFrankensteinCreature, GiGargoyle, GiGhost, GiGiant,
   GiGecko, GiGoblinCamp, GiGoblinHead, GiGolemHead, GiGriffinSymbol, GiHarpy,
   GiHornedSkull, GiHound, GiHydra, GiHyenaHead, GiIfrit, GiImp, GiJumpingDog,
   GiIceCube, GiKrakenTentacle, GiMedusaHead,
@@ -15,27 +15,6 @@ import {
   GiWitchFace, GiWormMouth,
 } from "react-icons/gi";
 import monsterData from "./monsters.generated.json";
-
-const EttinIcon: IconType = () => (
-  <span className="dual-creature-icon ettin-icon" aria-hidden="true">
-    <GiOgre />
-    <GiOgre />
-  </span>
-);
-
-const OwlbearIcon: IconType = () => (
-  <span className="owlbear-icon" aria-hidden="true">
-    <GiBearHead className="owlbear-head" />
-    <GiEvilEyes className="owlbear-eyes" />
-  </span>
-);
-
-const AzerIcon: IconType = () => (
-  <span className="azer-icon" aria-hidden="true">
-    <GiFlame />
-    <GiDwarfFace />
-  </span>
-);
 
 export type Monster = {
   name: string;
@@ -57,7 +36,7 @@ const ICONS: Record<string, IconType> = {
   "Ankheg": GiAlienBug,
   "Ankylosaurus": GiArmadilloTail,
   "Archelon": GiTurtle,
-  "Azer Sentinel": AzerIcon,
+  "Azer Sentinel": GiDwarfFace,
   "Balor": GiDaemonSkull,
   "Barbed Devil": GiSpikedDragonHead,
   "Basilisk": GiGecko,
@@ -87,7 +66,7 @@ const ICONS: Record<string, IconType> = {
   "Earth Elemental": GiRockGolem,
   "Efreeti": GiIfrit,
   "Ettercap": GiSpiderFace,
-  "Ettin": EttinIcon,
+  "Ettin": GiDuality,
   "Fire Elemental": GiFireSilhouette,
   "Fire Giant": GiFireAxe,
   "Flesh Golem": GiFrankensteinCreature,
@@ -116,7 +95,7 @@ const ICONS: Record<string, IconType> = {
   "Mimic": GiMimicChest,
   "Minotaur of Baphomet": GiMinotaur,
   "Mummy": GiMummyHead,
-  "Owlbear": OwlbearIcon,
+  "Owlbear": GiBearFace,
   "Pegasus": GiPegasus,
   "Purple Worm": GiWormMouth,
   "Sphinx of Wonder": GiEgyptianSphinx,
