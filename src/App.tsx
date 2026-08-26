@@ -1,8 +1,29 @@
 import React from "react";
-import { DailyDndle, compareNumber, compareText, type DndleConfig, type Result } from "@sirrio/dndle-core";
+import { DailyDndle, compareList, compareNumber, compareText, type DndleConfig, type Result } from "@sirrio/dndle-core";
 import { MONSTERS, type Monster } from "./monsters";
 
 const SIZE_RANK: Record<Monster["size"], number> = { Tiny: 0, Small: 1, Medium: 2, Large: 3, Huge: 4, Gargantuan: 5 };
+
+function monsterSizes(monster: Monster): Monster["size"][] {
+  return monster.alternateSize ? [monster.size, monster.alternateSize] : [monster.size];
+}
+
+function sizeLabel(monster: Monster) {
+  return monsterSizes(monster).join(" or ");
+}
+
+function compareSize(guess: Monster, target: Monster): Result {
+  const guessSizes = monsterSizes(guess);
+  const targetSizes = monsterSizes(target);
+  const overlap = compareList(guessSizes, targetSizes);
+  if (overlap !== "wrong") return overlap;
+
+  const guessRanks = guessSizes.map((size) => SIZE_RANK[size]);
+  const targetRanks = targetSizes.map((size) => SIZE_RANK[size]);
+  if (Math.max(...guessRanks) < Math.min(...targetRanks)) return "higher";
+  if (Math.min(...guessRanks) > Math.max(...targetRanks)) return "lower";
+  return "wrong";
+}
 
 function compareAlignment(value: string, target: string): Result {
   if (value === target) return "exact";
@@ -33,7 +54,7 @@ export const CRITTERDLE_CONFIG: DndleConfig<Monster> = {
   entries: MONSTERS,
   traits: [
     { key: "cr", label: "CR", mobileLabel: "Challenge rating", value: (monster) => crLabel(monster.challengeRating), compare: (guess, target) => compareNumber(guess.challengeRating, target.challengeRating) },
-    { key: "size", label: "Size", value: (monster) => monster.size, compare: (guess, target) => compareNumber(SIZE_RANK[guess.size], SIZE_RANK[target.size]) },
+    { key: "size", label: "Size", value: sizeLabel, compare: compareSize },
     { key: "type", label: "Type", value: (monster) => monster.type, compare: (guess, target) => compareText(guess.type, target.type) },
     { key: "alignment", label: "Alignment", value: (monster) => monster.alignment, compare: (guess, target) => compareAlignment(guess.alignment, target.alignment) },
     { key: "ac", label: "AC", mobileLabel: "Armor class", value: (monster) => String(monster.armorClass), compare: (guess, target) => compareNumber(guess.armorClass, target.armorClass) },
@@ -61,7 +82,7 @@ export const CRITTERDLE_CONFIG: DndleConfig<Monster> = {
     prompt: "Or search the Arcane Archive for spells?",
     url: "https://sirrio.github.io/spelldle/",
   },
-  resultSummary: (monster) => `CR ${crLabel(monster.challengeRating)} · ${monster.size} ${monster.type} · AC ${monster.armorClass} · ${monster.hitPoints} HP`,
+  resultSummary: (monster) => `CR ${crLabel(monster.challengeRating)} · ${sizeLabel(monster)} ${monster.type} · AC ${monster.armorClass} · ${monster.hitPoints} HP`,
   renderIcon: (monster) => <MonsterIcon monster={monster} />,
   credits: <><p>This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at <a href="https://www.dndbeyond.com/srd" target="_blank" rel="noreferrer">dndbeyond.com/srd</a>. The SRD 5.2.1 is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noreferrer">Creative Commons Attribution 4.0 International License</a>.</p><p>Icons by the contributors of <a href="https://game-icons.net/" target="_blank" rel="noreferrer">Game-icons.net</a>, used under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a>.</p></>,
 };

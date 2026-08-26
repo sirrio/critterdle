@@ -16,9 +16,12 @@ import {
 } from "react-icons/gi";
 import monsterData from "./monsters.generated.json";
 
+export type MonsterSize = "Tiny" | "Small" | "Medium" | "Large" | "Huge" | "Gargantuan";
+
 export type Monster = {
   name: string;
-  size: "Tiny" | "Small" | "Medium" | "Large" | "Huge" | "Gargantuan";
+  size: MonsterSize;
+  alternateSize?: MonsterSize;
   type: string;
   alignment: string;
   armorClass: number;
@@ -106,5 +109,6 @@ const ICONS: Record<string, IconType> = {
 export const MONSTERS: Monster[] = monsterData.map((monster) => ({
   ...monster,
   size: monster.size as Monster["size"],
+  alternateSize: "alternateSize" in monster ? monster.alternateSize as Monster["size"] : undefined,
   icon: ICONS[monster.name],
 }));
