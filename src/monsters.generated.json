@@ -652,6 +652,7 @@
   {
     "name": "Mummy",
     "size": "Medium",
+    "alternateSize": "Small",
     "type": "Undead",
     "alignment": "Lawful Evil",
     "armorClass": 11,
