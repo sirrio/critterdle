@@ -652,7 +652,7 @@
   {
     "name": "Mummy",
     "size": "Medium",
-    "type": "Or Small Undead",
+    "type": "Undead",
     "alignment": "Lawful Evil",
     "armorClass": 11,
     "hitPoints": 58,
@@ -702,7 +702,7 @@
   {
     "name": "Swarm of Crawling Claws",
     "size": "Medium",
-    "type": "Swarm Of Tiny Undead",
+    "type": "Undead",
     "alignment": "Neutral Evil",
     "armorClass": 12,
     "hitPoints": 49,
