@@ -37,14 +37,23 @@ requirements.
 
 - Install the locked dependency set with `npm ci` when a clean installation is
   required.
-- Run `npm test` to verify catalog completeness, unique signatures, full daily
-  rotation, and six-guess solvability.
-- Run `npm run build` for strict TypeScript checking and the production Vite
-  build.
-- Pull requests run both checks on Node 22 through `.github/workflows/ci.yml`.
-- For shared UI or interaction changes, verify the live-equivalent production
-  build on desktop and mobile. Cover archive selection, a submitted guess,
+- During Coding, select the tests for the changed catalog or game behavior and
+  check UI changes in the directly affected flows and viewports.
+- In the PR phase, run `npm test` for catalog completeness, unique signatures,
+  full daily rotation, and six-guess solvability, plus `npm run build` for strict
+  TypeScript checking and the production Vite build.
+- For shared UI or interaction changes, the full PR browser check covers the
+  production build on desktop and mobile: archive selection, a submitted guess,
   result feedback, icon tooltips, the result dialog, statistics, and sharing.
+- A coordinated `dndle-core` upgrade still requires all Critterdle checks as
+  specified above under shared-core contracts.
+- Pull requests currently run both automated checks on Node 22 through
+  `.github/workflows/ci.yml`, including Draft PRs; CI does not yet distinguish
+  the two phases.
+- For local production-build browser checks, the user starts
+  `npm run preview -- --host 127.0.0.1 --port 4173 --strictPort` after the build.
+  Check `http://127.0.0.1:4173/` for a successful response before
+  browser tests. The static page is the readiness endpoint; no backend is needed.
 
 ## Deployment and release
 
