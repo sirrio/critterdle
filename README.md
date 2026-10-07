@@ -54,3 +54,16 @@ from the Complete UI Book Styles Pack (TravelBook). Original PNGs are unmodified
 the layout and nine-slice display are adapted for Critterdle. The artwork uses
 the creator's custom license in `public/book-ui/LICENSE.txt`, not the source-code
 MIT license. The full purchased pack is not included.
+
+## Book theme implementation
+
+`src/book-layout.css` is intentionally identical in Spelldle and Critterdle.
+Until a coordinated core release, keep the two local copies in sync. The
+project-specific `src/index.css` contains only palette and original sprite
+metrics. Both games use the same page sizes, content insets, controls,
+84px mobile cards and 4/3/2-column mobile breakpoints. Sprite pixels render at
+2x; corner painting is independent of layout spacing. Modal padding is explicit.
+Used entries remain legible and the found entry retains full opacity.
+Button labels move with the original pressed artwork without shifting hit areas.
+
+TravelBook uses original button frame `_3` for the held state; `_2` clips the bottom outline.
