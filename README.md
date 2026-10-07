@@ -31,3 +31,26 @@ Creature icons by Lorc, Delapouite, and the contributors of [Game-icons.net](htt
 ## License
 
 The original source code is available under the [MIT License](LICENSE). SRD material and icons remain subject to their respective licenses above.
+
+## Local book UI prototype
+
+The TravelBook skin is local only until further user instruction. It uses original
+Crusenho PNGs with nine-slice borders: cover 12px, pages 8px, buttons 6px and
+slots 4px. Asset provenance and SHA-256 hashes are in `public/book-ui/sources.json`.
+Desktop keeps the 8 × 9 archive; mobile uses a bounded scrolling selection.
+The logo mark uses the existing brand artwork with a tighter SVG viewBox.
+Gameplay, storage and the shared-core dependency remain unchanged.
+
+Local preview (alongside Spelldle on port 5173):
+
+```bash
+npm run dev -- --host 127.0.0.1 --port 5174 --strictPort
+```
+
+The root page at http://127.0.0.1:5174/ is the readiness endpoint.
+
+Book UI artwork by [Crusenho Agus Hennihuno](https://crusenho.itch.io/complete-ui-book-styles-pack),
+from the Complete UI Book Styles Pack (TravelBook). Original PNGs are unmodified;
+the layout and nine-slice display are adapted for Critterdle. The artwork uses
+the creator's custom license in `public/book-ui/LICENSE.txt`, not the source-code
+MIT license. The full purchased pack is not included.

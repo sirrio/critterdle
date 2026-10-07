@@ -1,11 +1,293 @@
 @import "@sirrio/dndle-core/styles.css";
 
 .critterdle-theme {
-  --header-bg: #251517;
-  --red: #ff5757;
-  --red-dark: #ad2020;
-  --accent-hover: #e33f3f;
-  --accent-soft: #fff0f0;
-  --accent-border: #ffc0c0;
-  --accent-shadow: rgba(255, 87, 87, .2);
+  --header-bg: #493333;
+  --red: #923f49;
+  --red-dark: #632e37;
+  --accent-hover: #783942;
+  --accent-soft: #f7c993;
+  --accent-border: #ad7860;
+  --accent-shadow: rgba(99, 46, 55, .22);
+  --paper: #ffd7a8;
+  --ink: #3e2929;
+  --ink-soft: #62443a;
+  --muted: #78574a;
+  --line: #c19973;
+  --green: #356347;
+  --yellow: #87611a;
+  --gray: #655c58;
+  --book-cover: url("/book-ui/cover.png");
+  --book-left: url("/book-ui/page-left.png");
+  --book-right: url("/book-ui/page-right.png");
+  --book-button: url("/book-ui/button.png");
+  --book-button-pressed: url("/book-ui/button-pressed.png");
+  --book-slot: url("/book-ui/slot.png");
+  --book-slot-selected: url("/book-ui/slot-selected.png");
+  height: auto;
+  min-height: 100svh;
+  overflow: visible;
+  background: #e8dfcf;
+  color: var(--ink);
 }
+
+/* Original Crusenho sprites; only edges and centres stretch, never the corners. */
+body { min-width: 0; overflow: auto; background: #e8dfcf; }
+.critterdle-theme .topbar {
+  height: 90px;
+  max-width: 1600px;
+  margin: auto;
+  padding: 12px 32px;
+  background: transparent;
+  color: var(--ink);
+  border: 0;
+}
+.critterdle-theme .brand { color: var(--red-dark); }
+.critterdle-theme .brand::after {
+  content: "CRITTERDLE";
+  font: 400 clamp(27px, 3vw, 40px)/1 var(--font-display);
+  letter-spacing: .06em;
+}
+.critterdle-theme .brand-rune { display: grid; width: 42px; height: 54px; flex-shrink: 0; }
+.critterdle-theme .game-tagline { color: var(--ink-soft); border-color: var(--line); }
+.critterdle-theme .play-shell {
+  position: relative;
+  width: min(1560px, calc(100% - 40px));
+  height: max(650px, calc(100svh - 132px));
+  margin: 0 auto;
+  padding: 0;
+  gap: 6px;
+  grid-template-columns: minmax(400px, 44fr) minmax(0, 56fr);
+  border: 24px solid transparent;
+  border-image: var(--book-cover) 12 fill / 24px / 0 stretch;
+  filter: drop-shadow(0 8px 10px #49333324);
+}
+.critterdle-theme .archive-panel,
+.critterdle-theme .game-console {
+  min-height: 0;
+  border: 16px solid transparent;
+  border-image: var(--book-left) 8 fill / 16px / 0 stretch;
+  padding-inline: 4px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.critterdle-theme .game-console {
+  border-image-source: var(--book-right);
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 18px;
+  align-content: stretch;
+}
+.critterdle-theme .selection-stage,
+.critterdle-theme .results-panel {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.critterdle-theme .selection-stage {
+  grid-template-columns: 66px minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 12px 4px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.critterdle-theme .selected-sigil {
+  width: 62px;
+  height: 62px;
+  color: var(--red);
+  border: 6px solid transparent;
+  border-image: var(--book-slot) 4 fill / 6px / 0 stretch;
+  background: transparent;
+  border-radius: 0;
+}
+.critterdle-theme .has-selection .selected-sigil { color: #ffdfa8; }
+.critterdle-theme .selected-copy h1 { font-size: clamp(22px, 2vw, 32px); }
+.critterdle-theme .selected-copy p { color: var(--ink-soft); font-size: 13px; }
+.critterdle-theme .section-head { padding: 8px 4px 14px; border-color: var(--line); }
+.critterdle-theme .section-head h2 { color: var(--red-dark); }
+.critterdle-theme .spell-grid { padding: 14px 4px 18px; gap: 5px; }
+.critterdle-theme .spell-option {
+  border: 4px solid transparent;
+  border-image: var(--book-slot) 4 fill / 4px / 0 stretch;
+  border-radius: 0;
+  padding: 3px 1px;
+  background: transparent;
+  box-shadow: none;
+}
+.critterdle-theme .option-sigil { color: #ffdfa8; }
+.critterdle-theme .spell-option strong { color: #ffe7c6; }
+.critterdle-theme .spell-option.selected {
+  border-image-source: var(--book-slot-selected);
+  background: transparent;
+  outline: 2px solid #b87b2d;
+  outline-offset: 1px;
+  box-shadow: none;
+}
+.critterdle-theme .spell-option:hover:not(:disabled):not(.locked) {
+  transform: none;
+  box-shadow: none;
+  outline: 2px solid var(--red);
+  outline-offset: 1px;
+}
+.critterdle-theme .spell-option.used { background: transparent; opacity: .6; }
+.critterdle-theme .spell-option.used strong,
+.critterdle-theme .spell-option.used .option-sigil { color: #dbc7b6; }
+.critterdle-theme .spell-option.found { outline: 2px solid var(--green); background: transparent; }
+.critterdle-theme .spell-option.found .option-sigil,
+.critterdle-theme .spell-option.found strong { color: #bce3ba; }
+.critterdle-theme .primary,
+.critterdle-theme .stats-button,
+.critterdle-theme .icon-button,
+.critterdle-theme .modal-close,
+.critterdle-theme .popup-close,
+.critterdle-theme .name-toggle,
+.critterdle-theme .attempts {
+  border: 6px solid transparent;
+  border-image: var(--book-button) 6 fill / 6px / 0 stretch;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #ffe5c2;
+}
+.critterdle-theme .primary,
+.critterdle-theme .stats-button { min-height: 48px; padding: 6px 16px; }
+.critterdle-theme .submit-guess { min-width: 100px; }
+.critterdle-theme .name-toggle { min-width: 76px; height: 40px; padding: 0 6px; }
+.critterdle-theme .name-toggle strong { color: #c4e7af; }
+.critterdle-theme .name-toggle[aria-pressed="false"] strong { color: #d3bda8; }
+.critterdle-theme .attempts span { color: #d3bda8; }
+.critterdle-theme .primary:hover:not(:disabled),
+.critterdle-theme .stats-button:hover,
+.critterdle-theme .icon-button:hover,
+.critterdle-theme .name-toggle:hover { background: transparent; filter: brightness(1.15); }
+.critterdle-theme button:not(.spell-option):active:not(:disabled) {
+  border-image-source: var(--book-button-pressed);
+  transform: none;
+}
+.critterdle-theme .primary:disabled { background: transparent; color: #d3bda8; opacity: .65; }
+.critterdle-theme button:focus-visible,
+.critterdle-theme a:focus-visible,
+.critterdle-theme .spell-cell:focus-visible { outline: 3px solid #216586; outline-offset: 2px; }
+.critterdle-theme .results-panel { height: 100%; }
+.critterdle-theme .table-scroll { padding: 12px 0 0; overflow-y: auto; }
+.critterdle-theme .table-head { color: var(--ink-soft); }
+.critterdle-theme .rows { grid-template-rows: repeat(6, minmax(48px, 1fr)); }
+.critterdle-theme .spell-cell { background: #f5c58e; border-color: #b28b65; }
+.critterdle-theme .spell-cell.exact { background: var(--green); border-color: var(--green); }
+.critterdle-theme .empty-row span,
+.critterdle-theme .empty-row i { background: #f6ce9e; border-color: #c59d75; color: #7c5c49; }
+.critterdle-theme .spell-tooltip { background: #493333; border-color: #8f6552; color: #ffe6c6; }
+.critterdle-theme .spell-tooltip::after { background: #493333; border-color: #8f6552; }
+.critterdle-theme .site-footer { height: 42px; color: var(--ink-soft); }
+.critterdle-theme .modal,
+.critterdle-theme .result-popup {
+  border: 16px solid transparent;
+  border-image: var(--book-left) 8 fill / 16px / 0 stretch;
+  padding: 30px 24px 24px;
+  background: transparent;
+  box-shadow: 0 0 0 8px #9c4351, 0 24px 60px #20151566;
+}
+.critterdle-theme .modal-close,
+.critterdle-theme .popup-close { top: 6px; right: 6px; }
+.critterdle-theme .modal-backdrop,
+.critterdle-theme .result-backdrop { background: #211719c9; }
+.critterdle-theme .how-step,
+.critterdle-theme .modal-legend,
+.critterdle-theme .next-game { background: #f4c996; border-color: var(--line); }
+.critterdle-theme .result-popup > p { color: var(--ink-soft); }
+.critterdle-theme .reveal-sigil { background: #f2c38e; border-color: var(--line); }
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .critterdle-theme .play-shell { width: calc(100% - 20px); border-width: 18px; border-image-width: 18px; }
+  .critterdle-theme .archive-panel, .critterdle-theme .game-console { border-width: 10px; border-image-width: 10px; }
+  .critterdle-theme .selection-stage { grid-template-columns: 54px minmax(0, 1fr); }
+  .critterdle-theme .selected-sigil { width: 50px; height: 50px; }
+  .critterdle-theme .submit-guess { grid-column: 1 / -1; }
+}
+@media (max-width: 900px) {
+  .critterdle-theme .topbar { height: 76px; padding: 10px 18px; gap: 12px; }
+  .critterdle-theme .game-tagline { display: none; }
+  .critterdle-theme .play-shell {
+    width: calc(100% - 20px);
+    height: auto;
+    grid-template-columns: 1fr;
+    border-width: 14px;
+    border-image-width: 14px;
+    gap: 8px;
+  }
+  .critterdle-theme .archive-panel, .critterdle-theme .game-console { border-width: 10px; border-image-width: 10px; }
+  .critterdle-theme .spell-grid { flex: none; grid-template-columns: repeat(8, minmax(0, 1fr)); grid-template-rows: repeat(9, 64px); }
+  .critterdle-theme .game-console { grid-template-rows: auto auto; gap: 8px; }
+  .critterdle-theme .results-panel { min-height: 0; }
+  .critterdle-theme .table-scroll { overflow: visible; }
+}
+@media (max-width: 720px) {
+  .critterdle-theme .topbar { padding-inline: 12px; }
+  .critterdle-theme .brand::after { font-size: 25px; letter-spacing: .02em; }
+  .critterdle-theme .header-actions { gap: 4px; }
+  .critterdle-theme .results-button { padding: 0 6px; width: auto; }
+  .critterdle-theme .play-shell { width: calc(100% - 12px); }
+  .critterdle-theme .section-head h2 { font-size: 25px; }
+  .critterdle-theme .spell-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: 72px; padding: 10px 2px 2px; gap: 6px; }
+  .critterdle-theme .spell-option { min-height: 72px; }
+  .critterdle-theme .selection-stage { grid-template-columns: 54px minmax(0, 1fr); gap: 10px; }
+  .critterdle-theme .selected-sigil { width: 50px; height: 50px; }
+  .critterdle-theme .selected-copy h1 { font-size: 23px; }
+  .critterdle-theme .submit-guess { grid-column: 1 / -1; }
+  .critterdle-theme .rows { display: block; }
+  .critterdle-theme .result-row { background: #f1c691; border-color: var(--line); }
+  .critterdle-theme .modal, .critterdle-theme .result-popup { padding: 36px 10px 18px; }
+  .critterdle-theme .result-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .critterdle-theme .result-actions button { min-width: 0; padding: 6px 4px; font-size: 11px; letter-spacing: .06em; }
+  .critterdle-theme .site-footer { height: auto; }
+}
+@media (max-width: 380px) {
+  .critterdle-theme .brand::after { font-size: 20px; }
+  .critterdle-theme .attempts { min-width: 48px; }
+  .critterdle-theme .results-button { font-size: 10px; }
+}
+
+/* Keep the archive within reach of the cast controls on a small screen. */
+@media (max-width: 900px) {
+  .critterdle-theme .archive-panel { overflow: visible; }
+  .critterdle-theme .spell-grid {
+    flex: none;
+    height: clamp(210px, 38svh, 350px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable both-edges;
+    scrollbar-width: thin;
+    scrollbar-color: #ad7860 transparent;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: 76px;
+    padding: 10px 4px 18px;
+    scroll-padding-block: 10px;
+  }
+  .critterdle-theme .spell-option { min-height: 76px; }
+  .critterdle-theme .spell-option strong { font-size: 11px; height: 24px; line-height: 12px; }
+  .critterdle-theme .selection-stage { padding: 8px 4px 12px; }
+  .critterdle-theme .section-head { min-height: 52px; padding-block: 4px 8px; }
+  .critterdle-theme .game-console { gap: 4px; }
+}
+@media (max-width: 480px) {
+  .critterdle-theme .brand { gap: 6px; }
+  .critterdle-theme .brand-rune { width: 27px; height: 36px; }
+  .critterdle-theme .brand::after { font-size: 22px; }
+  .critterdle-theme .topbar { height: 64px; padding-inline: 10px; gap: 6px; flex-wrap: wrap; }
+  .critterdle-theme .header-actions { gap: 3px; }
+  .critterdle-theme .attempts { min-width: 46px; }
+  .critterdle-theme .spell-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .critterdle-theme .play-shell { border-width: 9px; border-image-width: 9px; }
+  .critterdle-theme .archive-panel, .critterdle-theme .game-console { border-width: 8px; border-image-width: 8px; }
+  .critterdle-theme .selected-copy h1 { font-size: 20px; }
+}
+@media (max-width: 380px) {
+  .critterdle-theme .brand::after { font-size: 16px; }
+  .critterdle-theme .brand-rune { width: 23px; }
+}
+
+@media (max-width: 720px) {
+  .critterdle-theme .empty-row > span:first-child { width: 100%; aspect-ratio: auto; height: 36px; }
+  .critterdle-theme .empty-row { height: 36px; }
+}
+.critterdle-theme .row-sigil, .critterdle-theme .reveal-sigil { color: #923f49; }

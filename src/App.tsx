@@ -49,7 +49,7 @@ export const CRITTERDLE_CONFIG: DndleConfig<Monster> = {
   id: "critterdle",
   storageKey: "critterdle",
   brand: "CRITTERDLE",
-  brandIconUrl: "brand-header.svg",
+  brandIconUrl: "brand-mark.svg",
   tagline: "THE DAILY MONSTER HUNT",
   entries: MONSTERS,
   traits: [
@@ -84,7 +84,7 @@ export const CRITTERDLE_CONFIG: DndleConfig<Monster> = {
   },
   resultSummary: (monster) => `CR ${crLabel(monster.challengeRating)} · ${sizeLabel(monster)} ${monster.type} · AC ${monster.armorClass} · ${monster.hitPoints} HP`,
   renderIcon: (monster) => <MonsterIcon monster={monster} />,
-  credits: <><p>This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at <a href="https://www.dndbeyond.com/srd" target="_blank" rel="noreferrer">dndbeyond.com/srd</a>. The SRD 5.2.1 is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noreferrer">Creative Commons Attribution 4.0 International License</a>.</p><p>Icons by the contributors of <a href="https://game-icons.net/" target="_blank" rel="noreferrer">Game-icons.net</a>, used under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a>.</p></>,
+  credits: <><p>This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at <a href="https://www.dndbeyond.com/srd" target="_blank" rel="noreferrer">dndbeyond.com/srd</a>. The SRD 5.2.1 is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noreferrer">Creative Commons Attribution 4.0 International License</a>.</p><p>Icons by the contributors of <a href="https://game-icons.net/" target="_blank" rel="noreferrer">Game-icons.net</a>, used under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noreferrer">CC BY 3.0</a>.</p><p>Book UI by <a href="https://crusenho.itch.io/complete-ui-book-styles-pack" target="_blank" rel="noreferrer">Crusenho Agus Hennihuno</a>. Original TravelBook sprites are used unchanged; layout and nine-slice scaling adapted for Critterdle. Used under the bundled custom license.</p></>,
 };
 
 export default function App() {
