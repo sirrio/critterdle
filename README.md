@@ -73,3 +73,22 @@ Used entries remain legible and the found entry retains full opacity.
 Button labels move with the original pressed artwork without shifting hit areas.
 
 TravelBook uses original button frame `_3` for the held state; `_2` clips the bottom outline.
+
+## Social preview
+
+`public/og.png` is a 1200 x 630 composition of the current book theme, brand mark,
+fonts and catalog icons. The original Crusenho sprites and icon artwork are
+unchanged; their arrangement is adapted for this social preview. The artwork
+credits and licenses above also apply to the composed image.
+
+Run `npm run preview:social` to generate the self-contained
+`dist/social-preview.html`. Render that HTML at exactly 1200 x 630 CSS pixels and
+1x device scale, wait for its embedded fonts/images to load, then save a viewport
+PNG as `public/og.png`. Check it at both full size and 400 x 210 before rebuilding.
+The generator reads the current theme tokens and catalog mappings. Keep its
+shared layout identical in both game repositories. It uses fixed sample entries,
+so the social preview never reveals the daily answer. `npm run build` removes
+the temporary HTML and copies only the finished PNG into the production output.
+
+OG and Twitter image URLs include a release version to refresh previously cached
+cards when the updated site is deployed.
