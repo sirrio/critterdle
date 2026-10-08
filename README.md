@@ -2,7 +2,7 @@
 
 A daily guessing game built around 72 monsters from the 2024 rules in the Dungeons & Dragons System Reference Document 5.2.1.
 
-Compare challenge rating, size, creature type, alignment, armor class, hit points, and top speed. Green is an exact match, yellow is a partial alignment match, and arrows point toward the target for ordered values.
+You have seven guesses to find today's monster. Compare challenge rating, size, creature type, alignment, armor class, hit points, and top speed. Green is an exact match, yellow is a partial alignment match, and arrows point toward the target for ordered values.
 
 🐉 **Live:** https://sirrio.github.io/critterdle/
 
@@ -39,7 +39,13 @@ Crusenho PNGs with nine-slice borders: cover 12px, pages 8px, buttons 6px and
 slots 4px. Asset provenance and SHA-256 hashes are in `public/book-ui/sources.json`.
 Desktop keeps the 8 × 9 archive; mobile uses a bounded scrolling selection.
 The logo mark uses the existing brand artwork with a tighter SVG viewBox.
-Gameplay, storage and the shared-core dependency remain unchanged.
+The local `dndle-core` candidate adds seven guesses, compact selection controls
+and a results list that grows as guesses are submitted. The daily sequence and
+storage namespace are unchanged; completed six-guess rounds retain their original
+limit, and existing statistics are preserved when adding the seventh distribution
+slot. The pinned dependency remains unchanged until a coordinated core release.
+Catalog tests retain the stronger guarantee that every monster can be found
+within six guesses.
 
 Local preview (alongside Spelldle on port 5173):
 

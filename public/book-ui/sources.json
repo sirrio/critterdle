@@ -10,6 +10,16 @@
     "source": "01_TravelBook/Sprites Animated/UI_TravelBook_Button01a_4.png"
   },
   {
+    "file": "checkbox.png",
+    "sha256": "ABF89E3FBC15A7F32C4F29F2E8B859951421966A0F0A1AABC839AA432BD4D1FC",
+    "source": "01_TravelBook/Sprites/UI_TravelBook_Toggle05a.png"
+  },
+  {
+    "file": "checkbox-checked.png",
+    "sha256": "94103A2EF246FE70A3829023351D5E3E34A17A7CF496FDA2018E18DE6E14F3AB",
+    "source": "01_TravelBook/Sprites/UI_TravelBook_Toggle05b.png"
+  },
+  {
     "file": "cover.png",
     "sha256": "F9C3CB81ECC24121E81E2FDC4A5C6649301C9762AB69C56688AAE8ECF3D4DD92",
     "source": "01_TravelBook/Sprites/UI_TravelBook_BookCover01a.png"
