@@ -4,7 +4,9 @@ A daily guessing game built around 72 monsters from the 2024 rules in the Dungeo
 
 You have seven guesses to find today's monster. Compare challenge rating, size, creature type, alignment, armor class, hit points, and top speed. Green is an exact match, yellow is a partial alignment match, and arrows point toward the target for ordered values.
 
-🐉 **Live:** https://sirrio.github.io/critterdle/
+🐉 **Current deployment:** https://sirrio.github.io/critterdle/
+
+**Custom domain prepared locally:** https://critterdle.com/ — see the cutover notes below.
 
 ## Features
 
@@ -21,6 +23,47 @@ You have seven guesses to find today's monster. Compare challenge rating, size, 
 npm install
 npm run dev
 ```
+
+## Deploying
+
+GitHub Actions builds the site and deploys `dist/` to **GitHub Pages** after every push to `main`.
+
+### Custom domain cutover
+
+The local release prepares `https://critterdle.com/` as the canonical address.
+Share links, social images and the sibling-game link use the new domains.
+This does not itself change the deployed site or DNS. Keep this status current
+when the coordinated cutover is completed.
+
+Domain ownership was verified in the GitHub account on 2026-10-09. The
+`_github-pages-challenge-sirrio` TXT record is installed in ALL-INKL and must
+remain in place. The web DNS and repository custom-domain switch are pending
+the coordinated release; verification alone does not redirect visitors.
+
+Verify the domain in GitHub first, retain its verification TXT record, then set
+`critterdle.com` as the repository's Pages custom domain before changing web DNS.
+The intended ALL-INKL records are:
+
+| Name | Type | Value |
+| --- | --- | --- |
+| `@` | A | `185.199.108.153` |
+| `@` | A | `185.199.109.153` |
+| `@` | A | `185.199.110.153` |
+| `@` | A | `185.199.111.153` |
+| `www` | CNAME | `sirrio.github.io.` |
+
+Replace conflicting web records; preserve mail records. The `www` alias redirects
+to the apex domain. Enable Enforce HTTPS once GitHub's certificate is ready.
+This repository deploys through Actions, so no `CNAME` file is required.
+See [GitHub's domain setup guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+
+Vite retains `base: "./"`; built assets and the favicon work at the domain root
+and under the legacy `/critterdle/` path. Check both origins, HTTPS, the `www`
+redirect, share/sibling links and social-image URLs after deployment.
+
+Browser progress belongs to its origin. The domain switch preserves the storage
+namespace and does not erase the old `sirrio.github.io` data, but existing rounds,
+statistics and streaks are not automatically transferred to `critterdle.com`.
 
 ## Credits
 

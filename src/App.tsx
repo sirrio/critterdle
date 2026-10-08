@@ -77,11 +77,11 @@ export const CRITTERDLE_CONFIG: DndleConfig<Monster> = {
   failureKicker: "THE QUARRY ESCAPES",
   nextLabel: "NEXT MONSTER IN",
   shareQuestion: "Can you track down today's monster?",
-  shareUrl: "https://sirrio.github.io/critterdle/?share=1",
+  shareUrl: "https://critterdle.com/?share=1",
   shareAction: "Join the hunt!",
   relatedGame: {
     prompt: "Or search the Arcane Archive for spells?",
-    url: "https://sirrio.github.io/spelldle/",
+    url: "https://spelldle.com/",
   },
   resultSummary: (monster) => `CR ${crLabel(monster.challengeRating)} · ${sizeLabel(monster)} ${monster.type} · AC ${monster.armorClass} · ${monster.hitPoints} HP`,
   renderIcon: (monster) => <MonsterIcon monster={monster} />,
