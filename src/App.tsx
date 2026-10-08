@@ -63,7 +63,7 @@ export const CRITTERDLE_CONFIG: DndleConfig<Monster> = {
   ],
   daily: { startUtc: [2026, 0, 1], multiplier: 19, offset: 7 },
   itemLabel: "Monster",
-  collectionTitle: "Monsters",
+  collectionTitle: "Bestiary",
   archiveName: "DAILY HUNT",
   resultsTitle: "Your guesses",
   selectPrompt: "Pick a monster, then start the hunt.",
