@@ -4,9 +4,9 @@ A daily guessing game built around 72 monsters from the 2024 rules in the Dungeo
 
 You have seven guesses to find today's monster. Compare challenge rating, size, creature type, alignment, armor class, hit points, and top speed. Green is an exact match, yellow is a partial alignment match, and arrows point toward the target for ordered values.
 
-🐉 **Current deployment:** https://sirrio.github.io/critterdle/
+🐉 **Legacy address:** https://sirrio.github.io/critterdle/
 
-**Custom domain prepared locally:** https://critterdle.com/ — see the cutover notes below.
+**Production domain:** https://critterdle.com/ — see the domain configuration below.
 
 ## Features
 
@@ -28,21 +28,15 @@ npm run dev
 
 GitHub Actions builds the site and deploys `dist/` to **GitHub Pages** after every push to `main`.
 
-### Custom domain cutover
+### Custom domain configuration
 
-The local release prepares `https://critterdle.com/` as the canonical address.
-Share links, social images and the sibling-game link use the new domains.
-This does not itself change the deployed site or DNS. Keep this status current
-when the coordinated cutover is completed.
+The canonical address is `https://critterdle.com/`. Share links, social images
+and the sibling-game link use the production domains.
 
-Domain ownership was verified in the GitHub account on 2026-10-09. The
-`_github-pages-challenge-sirrio` TXT record is installed in ALL-INKL and must
-remain in place. The web DNS and repository custom-domain switch are pending
-the coordinated release; verification alone does not redirect visitors.
-
-Verify the domain in GitHub first, retain its verification TXT record, then set
-`critterdle.com` as the repository's Pages custom domain before changing web DNS.
-The intended ALL-INKL records are:
+Domain ownership was verified in GitHub on 2026-10-09. The
+`_github-pages-challenge-sirrio` TXT record remains installed in ALL-INKL.
+The repository's Pages custom domain and the following ALL-INKL web DNS
+records were configured on that date. Keep the verification and mail records.
 
 | Name | Type | Value |
 | --- | --- | --- |
@@ -52,8 +46,8 @@ The intended ALL-INKL records are:
 | `@` | A | `185.199.111.153` |
 | `www` | CNAME | `sirrio.github.io.` |
 
-Replace conflicting web records; preserve mail records. The `www` alias redirects
-to the apex domain. Enable Enforce HTTPS once GitHub's certificate is ready.
+The `www` alias and the legacy GitHub Pages address redirect to the apex domain.
+Verify HTTPS and enable Enforce HTTPS when GitHub's certificate is ready.
 This repository deploys through Actions, so no `CNAME` file is required.
 See [GitHub's domain setup guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
@@ -75,19 +69,18 @@ Creature icons by Lorc, Delapouite, and the contributors of [Game-icons.net](htt
 
 The original source code is available under the [MIT License](LICENSE). SRD material and icons remain subject to their respective licenses above.
 
-## Book UI release candidate
+## Book UI
 
-The TravelBook skin is in the authorized PR phase; deployment remains pending the
-coordinated release. It uses original
-Crusenho PNGs with nine-slice borders: cover 12px, pages 8px, buttons 6px and
+The TravelBook skin uses original Crusenho PNGs with nine-slice borders:
+cover 12px, pages 8px, buttons 6px and
 slots 4px. Asset provenance and SHA-256 hashes are in `public/book-ui/sources.json`.
 Desktop keeps the 8 × 9 archive; mobile uses a bounded scrolling selection.
 The logo mark uses the existing brand artwork with a tighter SVG viewBox.
-The local `dndle-core` candidate adds seven guesses, compact selection controls
+The published `@sirrio/dndle-core` version `1.0.7` provides seven guesses, compact selection controls
 and a results list that grows as guesses are submitted. The daily sequence and
 storage namespace are unchanged; completed six-guess rounds retain their original
 limit, and existing statistics are preserved when adding the seventh distribution
-slot. The pinned dependency remains unchanged until a coordinated core release.
+slot. The shared core is pinned to its exact `v1.0.7` GitHub tag archive.
 Catalog tests retain the stronger guarantee that every monster can be found
 within six guesses.
 
@@ -112,7 +105,7 @@ obtain the artwork and its license from the creator for your own projects.
 ## Book theme implementation
 
 `src/book-layout.css` is intentionally identical in Spelldle and Critterdle.
-Until a coordinated core release, keep the two local copies in sync. The
+Keep the two game-owned copies in sync. The
 project-specific `src/index.css` contains only palette and original sprite
 metrics. Both games use the same page sizes, content insets, controls,
 84px mobile cards and 6/4/3/2-column narrow-screen breakpoints. Sprite pixels render at

@@ -58,11 +58,11 @@ requirements.
 
 ## Deployment and release
 
-- The intended GitHub Pages production URL is `https://critterdle.com/`, with
-  `www.critterdle.com` redirecting there. Domain support is prepared locally;
-  the existing deployment remains at `https://sirrio.github.io/critterdle/`
-  until the coordinated domain cutover. Check live DNS and Pages settings
-  before treating the custom domain as active.
+- GitHub Pages uses `https://critterdle.com/` as its canonical production URL.
+  The Pages custom domain and ALL-INKL web DNS were configured on 2026-10-09.
+  Keep the GitHub ownership TXT record and existing mail records. Verify HTTPS,
+  the `www.critterdle.com` redirect and the legacy
+  `https://sirrio.github.io/critterdle/` redirect after deployment.
 - Keep Vite's relative `base: "./"` so the same build works at the domain root
   and the legacy repository path. This Actions deployment does not need a
   `CNAME` file; configure the custom domain in the repository's Pages settings.
