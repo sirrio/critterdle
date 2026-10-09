@@ -13,8 +13,8 @@ requirements.
 - Do not add homebrew, proprietary non-SRD creatures, free-form character
   systems, live-service progression, or unrelated game modes without explicit
   product approval.
-- Preserve one shared worldwide puzzle that changes at midnight UTC and can be
-  solved in at most six guesses.
+- Preserve one shared worldwide puzzle that changes at midnight UTC and allows
+  at most seven guesses.
 - Player progress, statistics, streaks, and guess distribution remain local to
   the browser. This project has no backend or production database.
 
@@ -23,7 +23,8 @@ requirements.
 - `src/monsters.generated.json` contains the SRD-derived monster values;
   `src/monsters.tsx` supplies the typed catalog and icon mapping.
 - Every monster must have a unique seven-trait signature, a usable icon, and a
-  deterministic feedback path within six guesses. Preserve the 8 x 9 archive.
+  deterministic feedback path within six guesses. Keep this stronger catalog
+  guarantee despite the seven-guess allowance. Preserve the 8 x 9 archive.
 - Treat the `startUtc`, `multiplier`, and `offset` values in `src/App.tsx` as a
   published continuity contract. Changing them alters the daily answer sequence
   and requires explicit product approval and release-note disclosure.
@@ -37,18 +38,37 @@ requirements.
 
 - Install the locked dependency set with `npm ci` when a clean installation is
   required.
-- Run `npm test` to verify catalog completeness, unique signatures, full daily
-  rotation, and six-guess solvability.
-- Run `npm run build` for strict TypeScript checking and the production Vite
-  build.
-- Pull requests run both checks on Node 22 through `.github/workflows/ci.yml`.
-- For shared UI or interaction changes, verify the live-equivalent production
-  build on desktop and mobile. Cover archive selection, a submitted guess,
+- During Coding, select the tests for the changed catalog or game behavior and
+  check UI changes in the directly affected flows and viewports.
+- In the PR phase, run `npm test` for catalog completeness, unique signatures,
+  full daily rotation, and six-guess solvability, plus `npm run build` for strict
+  TypeScript checking and the production Vite build.
+- For shared UI or interaction changes, the full PR browser check covers the
+  production build on desktop and mobile: archive selection, a submitted guess,
   result feedback, icon tooltips, the result dialog, statistics, and sharing.
+- A coordinated `dndle-core` upgrade still requires all Critterdle checks as
+  specified above under shared-core contracts.
+- Pull requests currently run both automated checks on Node 22 through
+  `.github/workflows/ci.yml`, including Draft PRs; CI does not yet distinguish
+  the two phases.
+- For local production-build browser checks, the user starts
+  `npm run preview -- --host 127.0.0.1 --port 4173 --strictPort` after the build.
+  Check `http://127.0.0.1:4173/` for a successful response before
+  browser tests. The static page is the readiness endpoint; no backend is needed.
 
 ## Deployment and release
 
-- GitHub Pages serves production at `https://sirrio.github.io/critterdle/`.
+- GitHub Pages uses `https://critterdle.com/` as its canonical production URL.
+  The Pages custom domain and ALL-INKL web DNS were configured on 2026-10-09.
+  Keep the GitHub ownership TXT record and existing mail records. Verify HTTPS,
+  the `www.critterdle.com` redirect and the legacy
+  `https://sirrio.github.io/critterdle/` redirect after deployment.
+- Keep Vite's relative `base: "./"` so the same build works at the domain root
+  and the legacy repository path. This Actions deployment does not need a
+  `CNAME` file; configure the custom domain in the repository's Pages settings.
+- Keep share links, sibling-game links, canonical URL and social image URLs
+  aligned with the production domains. Preserve the storage namespace: changing
+  origins does not delete old localStorage, but cannot automatically transfer it.
 - `.github/workflows/deploy.yml` builds, tests, and deploys every push to `main`.
   Approving a pull-request merge therefore also approves the production
   deployment and must state both actions explicitly.

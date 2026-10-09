@@ -2,9 +2,11 @@
 
 A daily guessing game built around 72 monsters from the 2024 rules in the Dungeons & Dragons System Reference Document 5.2.1.
 
-Compare challenge rating, size, creature type, alignment, armor class, hit points, and top speed. Green is an exact match, yellow is a partial alignment match, and arrows point toward the target for ordered values.
+You have seven guesses to find today's monster. Compare challenge rating, size, creature type, alignment, armor class, hit points, and top speed. Green is an exact match, yellow is a partial alignment match, and arrows point toward the target for ordered values.
 
-🐉 **Live:** https://sirrio.github.io/critterdle/
+🐉 **Legacy address:** https://sirrio.github.io/critterdle/
+
+**Production domain:** https://critterdle.com/ — see the domain configuration below.
 
 ## Features
 
@@ -22,6 +24,41 @@ npm install
 npm run dev
 ```
 
+## Deploying
+
+GitHub Actions builds the site and deploys `dist/` to **GitHub Pages** after every push to `main`.
+
+### Custom domain configuration
+
+The canonical address is `https://critterdle.com/`. Share links, social images
+and the sibling-game link use the production domains.
+
+Domain ownership was verified in GitHub on 2026-10-09. The
+`_github-pages-challenge-sirrio` TXT record remains installed in ALL-INKL.
+The repository's Pages custom domain and the following ALL-INKL web DNS
+records were configured on that date. Keep the verification and mail records.
+
+| Name | Type | Value |
+| --- | --- | --- |
+| `@` | A | `185.199.108.153` |
+| `@` | A | `185.199.109.153` |
+| `@` | A | `185.199.110.153` |
+| `@` | A | `185.199.111.153` |
+| `www` | CNAME | `sirrio.github.io.` |
+
+The `www` alias and the legacy GitHub Pages address redirect to the apex domain.
+Verify HTTPS and enable Enforce HTTPS when GitHub's certificate is ready.
+This repository deploys through Actions, so no `CNAME` file is required.
+See [GitHub's domain setup guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+
+Vite retains `base: "./"`; built assets and the favicon work at the domain root
+and under the legacy `/critterdle/` path. Check both origins, HTTPS, the `www`
+redirect, share/sibling links and social-image URLs after deployment.
+
+Browser progress belongs to its origin. The domain switch preserves the storage
+namespace and does not erase the old `sirrio.github.io` data, but existing rounds,
+statistics and streaks are not automatically transferred to `critterdle.com`.
+
 ## Credits
 
 This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at [dndbeyond.com/srd](https://www.dndbeyond.com/srd). The SRD 5.2.1 is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/legalcode).
@@ -31,3 +68,68 @@ Creature icons by Lorc, Delapouite, and the contributors of [Game-icons.net](htt
 ## License
 
 The original source code is available under the [MIT License](LICENSE). SRD material and icons remain subject to their respective licenses above.
+
+## Book UI
+
+The TravelBook skin uses original Crusenho PNGs with nine-slice borders:
+cover 12px, pages 8px, buttons 6px and
+slots 4px. Asset provenance and SHA-256 hashes are in `public/book-ui/sources.json`.
+Desktop keeps the 8 × 9 archive; mobile uses a bounded scrolling selection.
+The logo mark uses the existing brand artwork with a tighter SVG viewBox.
+The published `@sirrio/dndle-core` version `1.0.7` provides seven guesses, compact selection controls
+and a results list that grows as guesses are submitted. The daily sequence and
+storage namespace are unchanged; completed six-guess rounds retain their original
+limit, and existing statistics are preserved when adding the seventh distribution
+slot. The shared core is pinned to its exact `v1.0.7` GitHub tag archive.
+Catalog tests retain the stronger guarantee that every monster can be found
+within six guesses.
+
+Local preview (alongside Spelldle on port 5173):
+
+```bash
+npm run dev -- --host 127.0.0.1 --port 5174 --strictPort
+```
+
+The root page at http://127.0.0.1:5174/ is the readiness endpoint.
+
+Book UI artwork by [Crusenho Agus Hennihuno](https://crusenho.itch.io/complete-ui-book-styles-pack),
+from the Complete UI Book Styles Pack (TravelBook). Original PNGs are unmodified;
+the layout and nine-slice display are adapted for Critterdle. The artwork uses
+the creator's custom license in `public/book-ui/LICENSE.txt`, not the source-code
+MIT license. The full purchased pack is not included.
+Crusenho [confirms use in an online game with disclosed sources](https://itch.io/post/13320970).
+Only the nine sprites needed by this game are included. Their presence does not
+grant permission to extract or republish the pack as a separate asset collection;
+obtain the artwork and its license from the creator for your own projects.
+
+## Book theme implementation
+
+`src/book-layout.css` is intentionally identical in Spelldle and Critterdle.
+Keep the two game-owned copies in sync. The
+project-specific `src/index.css` contains only palette and original sprite
+metrics. Both games use the same page sizes, content insets, controls,
+84px mobile cards and 6/4/3/2-column narrow-screen breakpoints. Sprite pixels render at
+2x; corner painting is independent of layout spacing. Modal padding is explicit.
+Used entries remain legible and the found entry retains full opacity.
+Button labels move with the original pressed artwork without shifting hit areas.
+
+TravelBook uses original button frame `_3` for the held state; `_2` clips the bottom outline.
+
+## Social preview
+
+`public/og.png` is a 1200 x 630 composition of the current book theme, brand mark,
+fonts and catalog icons. The original Crusenho sprites and icon artwork are
+unchanged; their arrangement is adapted for this social preview. The artwork
+credits and licenses above also apply to the composed image.
+
+Run `npm run preview:social` to generate the self-contained
+`dist/social-preview.html`. Render that HTML at exactly 1200 x 630 CSS pixels and
+1x device scale, wait for its embedded fonts/images to load, then save a viewport
+PNG as `public/og.png`. Check it at both full size and 400 x 210 before rebuilding.
+The generator reads the current theme tokens and catalog mappings. Keep its
+shared layout identical in both game repositories. It uses fixed sample entries,
+so the social preview never reveals the daily answer. `npm run build` removes
+the temporary HTML and copies only the finished PNG into the production output.
+
+OG and Twitter image URLs include a release version to refresh previously cached
+cards when the updated site is deployed.

@@ -1,11 +1,39 @@
 @import "@sirrio/dndle-core/styles.css";
+@import "./book-layout.css";
 
 .critterdle-theme {
-  --header-bg: #251517;
-  --red: #ff5757;
-  --red-dark: #ad2020;
-  --accent-hover: #e33f3f;
-  --accent-soft: #fff0f0;
-  --accent-border: #ffc0c0;
-  --accent-shadow: rgba(255, 87, 87, .2);
+  --header-bg: #493333;
+  --red: #923f49;
+  --red-dark: #632e37;
+  --accent-hover: #783942;
+  --accent-soft: #f7c993;
+  --accent-border: #ad7860;
+  --accent-shadow: rgba(99, 46, 55, .22);
+  --paper: #ffd7a8;
+  --ink: #3e2929;
+  --ink-soft: #62443a;
+  --muted: #78574a;
+  --line: #c19973;
+  --green: #356347;
+  --yellow: #87611a;
+  --gray: #655c58;
+  --book-cover: url("/book-ui/cover.png");
+  --book-left: url("/book-ui/page-left.png");
+  --book-right: url("/book-ui/page-right.png");
+  --book-button: url("/book-ui/button.png");
+  --book-button-pressed: url("/book-ui/button-pressed.png");
+  --book-checkbox: url("/book-ui/checkbox.png");
+  --book-checkbox-checked: url("/book-ui/checkbox-checked.png");
+  --book-slot: url("/book-ui/slot.png");
+  --book-slot-selected: url("/book-ui/slot-selected.png");
+  --slot-slice: 4; --slot-width: 8px; --press-shift: 6px;
+  --trait-columns: .42fr .48fr .92fr .92fr 1.1fr .45fr .55fr .72fr;
+  --brand-name: "CRITTERDLE";
+  --cover-slice: 12; --cover-width: 24px;
+  --page-left-slice: 8; --page-left-width: 16px;
+  --page-right-slice: 8; --page-right-width: 16px;
+  --button-slice: 6; --button-width: 12px;
+  --button-ink: #ffe5c2; --button-muted: #d3bda8;
+  --panel-tint: #f4c996; --empty-tint: #f6ce9e;
+  --cover-color: #9c4351; --tooltip-bg: #493333;
 }
